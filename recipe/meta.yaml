@@ -1,4 +1,4 @@
-{% set version = "0.12" %}
+{% set version = "0.13" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pegas_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pegas/pegas_{{ version }}.tar.gz
-  sha256: 17f94b3b7541754a2423529d2cd004a03ec5807269435316ab6888467e656869
+  sha256: 7e676710eb6f6918868559f07c9cc017fa88b5f640bf0236c0165af0883e5100
 
 build:
-  merge_build_host: True  # [win]
-  skip: True  # [win]
+  merge_build_host: true  # [win]
+  skip: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -47,13 +47,11 @@ test:
 about:
   home: http://ape-package.ird.fr/pegas.html
   license: GPL (>= 2)
-  summary: Functions for reading, writing, plotting, analysing, and manipulating allelic and
-    haplotypic data, including from VCF files, and for the analysis of population nucleotide
-    sequences and micro-satellites including coalescent analyses, linkage disequilibrium,
-    population structure (Fst, Amova) and equilibrium (HWE), haplotype networks, minimum
-    spanning tree and network, and median-joining networks.
+  summary: Functions for reading, writing, plotting, analysing, and manipulating allelic and haplotypic data, including from VCF files, and for the analysis of population
+    nucleotide sequences and micro-satellites including coalescent analyses, linkage disequilibrium, population structure (Fst, Amova) and equilibrium (HWE), haplotype
+    networks, minimum spanning tree and network, and median-joining networks.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
