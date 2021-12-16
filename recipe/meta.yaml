@@ -1,4 +1,4 @@
-{% set version = "1.0-1" %}
+{% set version = "1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pegas_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pegas/pegas_{{ version }}.tar.gz
-  sha256: e133ef193d02e1fa31a19474d99852577c565aa80cc91a5a698a21762e417d7a
+  sha256: 87ba91a819496dfc3abdcc792ff853a6d49caae6335598a24c23e8851505ed59
 
 build:
   merge_build_host: true  # [win]
